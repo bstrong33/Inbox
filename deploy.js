@@ -1,11 +1,13 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
+
+let { mnemonic, infura } = process.env
  
 const { abi, evm } = require('./compile');
  
 provider = new HDWalletProvider(
-    'barely buffalo science slender bicycle possible sheriff capable alcohol super warrior bubble',
-    "https://rinkeby.infura.io/v3/923ca9cf36dc4557a7e5f82e673b0f8a"
+    mnemonic,
+    infura
 );
  
 const web3 = new Web3(provider);
